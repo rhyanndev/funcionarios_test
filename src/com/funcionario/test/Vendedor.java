@@ -21,10 +21,21 @@ public class Vendedor extends Funcionario {
      
     }
      
+     public int getTotalVendasNoMes(int mes, int ano) {
+    int totalVendas = 0;
+    for (Venda venda : vendasNoMes) {
+        if (venda.getMes() == mes && venda.getAno() == ano) {
+            totalVendas+= venda.getValorVendido();
+
+        }
+    }
+    return totalVendas;
+}
+     
     @Override
     public double getSalario(int mes, int ano) {
         if (ano < dataContratacao.getAno() || (ano == dataContratacao.getAno() && mes < dataContratacao.getMes())) {
-            throw new IllegalArgumentException("Data fornecida é anterior à data de contratação.");
+            throw new IllegalArgumentException("Data fornecida é anterior à data de contratação!");
         }
 
         int anosDeServico = ano - dataContratacao.getAno();
@@ -37,6 +48,18 @@ public class Vendedor extends Funcionario {
 
         return salario;
     }
+    
+    
+    @Override
+    public boolean recebeBeneficio(int mes, int ano) {
+        for (Venda venda : vendasNoMes) {
+        if (venda.getMes() == mes && venda.getAno() == ano) {
+            return true; 
+        }
+    }
+    return false; // Se não houver vendas no mês e ano, o vendedor não recebe benefícios
+    }
+    
     
     public double getBeneficio(int mes, int ano) {
         for (Venda venda : vendasNoMes) {

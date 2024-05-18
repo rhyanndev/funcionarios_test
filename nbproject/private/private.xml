@@ -5,8 +5,9 @@
         <group>
             <file>file:/C:/Users/rhyan/Documents/NetBeansProjects/funcionariotest/src/com/funcionario/test/Main.java</file>
             <file>file:/C:/Users/rhyan/Documents/NetBeansProjects/funcionariotest/src/com/funcionario/test/Vendedor.java</file>
-            <file>file:/C:/Users/rhyan/Documents/NetBeansProjects/funcionariotest/src/com/funcionario/test/Venda.java</file>
             <file>file:/C:/Users/rhyan/Documents/NetBeansProjects/funcionariotest/src/com/funcionario/test/Secretario.java</file>
+            <file>file:/C:/Users/rhyan/Documents/NetBeansProjects/funcionariotest/src/com/funcionario/test/Venda.java</file>
+            <file>file:/C:/Users/rhyan/Documents/NetBeansProjects/funcionariotest/src/com/funcionario/test/CalculadoraPagamentos.java</file>
             <file>file:/C:/Users/rhyan/Documents/NetBeansProjects/funcionariotest/src/com/funcionario/test/Funcionario.java</file>
             <file>file:/C:/Users/rhyan/Documents/NetBeansProjects/funcionariotest/src/com/funcionario/test/Gerente.java</file>
         </group>

@@ -38,6 +38,8 @@ public abstract class Funcionario {
     }
 
     public abstract double getBeneficio(int mes, int ano);
+    
+    public abstract boolean recebeBeneficio(int mes, int ano);
   
     public abstract double getSalario(int mes, int ano);
     

@@ -37,6 +37,11 @@ public class Secretario extends Funcionario {
     }
     
     @Override
+    public boolean recebeBeneficio(int mes, int ano) {
+        return true;
+    }
+    
+    @Override
     public double getBeneficio(int mes, int ano){
         double porcentagem = 0.2;
         return getSalario(mes, ano) * porcentagem;

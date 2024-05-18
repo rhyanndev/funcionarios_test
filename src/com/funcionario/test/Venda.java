@@ -54,9 +54,8 @@ public class Venda {
     }
     
     public void exibirInformacoesDaVenda(){
-        System.out.println("Cargo: Vendedor");
-        System.out.println("Nome: " + vendedor.getNome());
-        System.out.println("Valor vendido no mês " + getMes() + " no ano " + getAno());
+        System.out.println("\nNome do vendedor: " + vendedor.getNome());
+        System.out.println("Valor vendido no mês " + getMes() + " no ano de " + getAno());
         System.out.println("Valor da venda: R$" + getValorVendido());
     }
    

@@ -34,11 +34,16 @@ public class Gerente extends Funcionario {
     }
 
         return salario;
+        
+    }
+    
+     @Override
+    public boolean recebeBeneficio(int mes, int ano) {
+        return false; 
     }
     
     @Override
     public double getBeneficio(int mes, int ano) {
-        // Gerente não recebe benefício, então retorna zero
         return 0.0;
     }
 

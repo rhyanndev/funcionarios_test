@@ -8,36 +8,47 @@ package com.funcionario.test;
 import java.time.Year;
 
 
-public class Secretario extends Funcionario {
+public class Secretario extends Funcionario { 
     
     private static final double salarioBase = 7000.0;
     private static final double bonusPorAno = 1000.0;
-    private int anoContratacaoSalario;
+ 
     
      public Secretario(String nome, int mesContratacao, int anoContratacao) {
         super(nome, mesContratacao, anoContratacao);
-        this.anoContratacaoSalario = anoContratacao;
+
     }
      
+      @Override
+    public double getSalario(int mes, int ano) {
+        if (ano < dataContratacao.getAno() || (ano == dataContratacao.getAno() && mes < dataContratacao.getMes())) {
+            throw new IllegalArgumentException("Data fornecida é anterior à data de contratação.");
+        }
 
-     @Override
-    public double getSalario() {
-        int anosDeServico = Year.now().getValue() - anoContratacaoSalario;
-        return salarioBase + (anosDeServico * bonusPorAno);
+        int anosDeServico = ano - dataContratacao.getAno();
+        
+        double salario = salarioBase;
+        
+        if (anosDeServico > 0) {
+        salario += (anosDeServico * bonusPorAno);
+    }
+
+        return salario;
     }
     
     @Override
-    public double getBeneficio(){
+    public double getBeneficio(int mes, int ano){
         double porcentagem = 0.2;
-        return getSalario() * porcentagem;
+        return getSalario(mes, ano) * porcentagem;
     }
 
     @Override
-    public void exibirInformacoesDoFuncionario() {
+    public void exibirInformacoesDoFuncionario(int mes, int ano) {
         System.out.println("Cargo: Secretário");
         System.out.println("Nome: " + nome);
-        System.out.println("Salário: R$" + getSalario());
-        System.out.println("Benefício: R$" + getBeneficio());
+        System.out.println("Data de Contratação: " + dataContratacao.getMes() + "/" + dataContratacao.getAno());
+        System.out.println("Salário em " + mes + "/" + ano + ": R$" + getSalario(mes, ano));
+        System.out.println("Benefício em " + mes + "/" + ano + ": R$" + getBeneficio(mes, ano));
     }
 
 }

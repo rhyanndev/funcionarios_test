@@ -37,11 +37,11 @@ public abstract class Funcionario {
         this.dataContratacao = dataContratacao;
     }
 
-    public abstract double getBeneficio();
+    public abstract double getBeneficio(int mes, int ano);
   
     public abstract double getSalario(int mes, int ano);
     
     
-    public abstract void exibirInformacoesDoFuncionario();
+    public abstract void exibirInformacoesDoFuncionario(int mes, int ano);
 
 }

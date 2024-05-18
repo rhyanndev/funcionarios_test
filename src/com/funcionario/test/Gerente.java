@@ -12,30 +12,42 @@ public class Gerente extends Funcionario {
     
     private static final double salarioBase = 20000.0;
     private static final double bonusPorAno = 3000.0;
-    private int anoContratacaoSalario;
+   
     
      public Gerente(String nome, int mesContratacao, int anoContratacao) {
         super(nome, mesContratacao, anoContratacao);
-        this.anoContratacaoSalario = anoContratacao;
+       
     }
 
      @Override
-    public double getSalario() {
-        int anosDeServico = Year.now().getValue() - anoContratacaoSalario;
-        return salarioBase + (anosDeServico * bonusPorAno);
+    public double getSalario(int mes, int ano) {
+        if (ano < dataContratacao.getAno() || (ano == dataContratacao.getAno() && mes < dataContratacao.getMes())) {
+            throw new IllegalArgumentException("Data fornecida é anterior à data de contratação.");
+        }
+
+        int anosDeServico = ano - dataContratacao.getAno();
+        
+        double salario = salarioBase;
+        
+        if (anosDeServico > 0) {
+        salario += (anosDeServico * bonusPorAno);
+    }
+
+        return salario;
     }
     
     @Override
-    public double getBeneficio() {
+    public double getBeneficio(int mes, int ano) {
         // Gerente não recebe benefício, então retorna zero
         return 0.0;
     }
 
     @Override
-    public void exibirInformacoesDoFuncionario() {
-        System.out.println("Cargo: Secretário");
+    public void exibirInformacoesDoFuncionario(int mes, int ano) {
+        System.out.println("Cargo: Gerente");
         System.out.println("Nome: " + nome);
-        System.out.println("Salário: R$" + getSalario());
+        System.out.println("Data de Contratação: " + dataContratacao.getMes() + "/" + dataContratacao.getAno());
+        System.out.println("Salário em " + mes + "/" + ano + ": R$" + getSalario(mes, ano));
     }
 
 

@@ -4,6 +4,9 @@
  */
 package com.funcionario.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author rhyan
@@ -15,19 +18,35 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        //Secretario p1 = new Secretario("Rhyann", 01,2022);
+        /**
+       // Lista de vendas para Ana Silva
+        List<Venda> vendasAna = new ArrayList<>();
         
-      // p1.exibirInformacoesDoFuncionario();
+        // Cria o vendedor Ana Silva
+        Vendedor a1 = new Vendedor("Ana Silva", 12, 2021, vendasAna);
         
-       Vendedor p2 = new Vendedor("Ana Silva", 12, 2021,5200);
-       
-       p2.exibirInformacoesDoFuncionario();
+        // Cria vendas e associa ao vendedor
+        vendasAna.add(new Venda(a1, 5200.0, 12, 2021));
+      
+        vendasAna.add(new Venda(a1, 4200.0, 2, 2022));
+        
 
-       //Venda v1 = new Venda(p2,1000, 02, 2023);
-       
-       //v1.exibirInformacoesDaVenda();
-       
-       
+        // Exibe as informações da Ana Silva em dezembro de 2021
+        System.out.println("Informações de Ana Silva em dezembro de 2021:");
+        a1.exibirInformacoesDoFuncionario(12, 2021);
+
+        // Exibe as informações da Ana Silva em janeiro de 2022
+        System.out.println("\nInformações de Ana Silva em fevereiro de 2022:");
+        a1.exibirInformacoesDoFuncionario(2, 2022);
+        
+        */
+        
+        //Secretario s1 = new Secretario("Jorge Carvalho", 01, 2018);
+        //s1.exibirInformacoesDoFuncionario(01, 2023);
+        
+        //Gerente g1 = new Gerente("Juliana Alves", 01, 2017);
+        //g1.exibirInformacoesDoFuncionario(01, 2023);
+        
         
     }
     

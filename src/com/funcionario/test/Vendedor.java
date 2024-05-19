@@ -11,8 +11,8 @@ import java.util.List;
 
 public class Vendedor extends Funcionario {
     
-    private static final double salarioBase = 12000.0;
-    private static final double bonusPorAno = 1800.0;
+    private static final double SALARIOBASE = 12000.0;
+    private static final double BONUSPORANO = 1800.0;
     private List<Venda> vendasNoMes;
             
      public Vendedor(String nome, int mesContratacao, int anoContratacao, List<Venda> vendasNoMes) {
@@ -40,10 +40,10 @@ public class Vendedor extends Funcionario {
 
         int anosDeServico = ano - dataContratacao.getAno();
         
-        double salario = salarioBase;
+        double salario = SALARIOBASE;
         
         if (anosDeServico > 0) {
-        salario += (anosDeServico * bonusPorAno);
+        salario += (anosDeServico * BONUSPORANO);
     }
 
         return salario;
@@ -72,11 +72,11 @@ public class Vendedor extends Funcionario {
 
     @Override
     public void exibirInformacoesDoFuncionario(int mes, int ano) {
-        System.out.println("Cargo: Vendedor");
+        System.out.println("\nCargo: Vendedor");
         System.out.println("Nome: " + nome);
         System.out.println("Data de Contratação: " + dataContratacao.getMes() + "/" + dataContratacao.getAno());
-        System.out.println("Salário em " + mes + "/" + ano + ": R$" + getSalario(mes, ano));
-        System.out.println("Benefício em " + mes + "/" + ano + ": R$" + getBeneficio(mes, ano));
+        System.out.println("Salário em " + mes + "/" + ano + ": R$ " + getSalario(mes, ano));
+        System.out.println("Benefício em " + mes + "/" + ano + ": R$ " + getBeneficio(mes, ano));
     }
 
 

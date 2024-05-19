@@ -10,8 +10,8 @@ import java.time.Year;
 
 public class Gerente extends Funcionario {
     
-    private static final double salarioBase = 20000.0;
-    private static final double bonusPorAno = 3000.0;
+    private static final double SALARIOBASE = 20000.0;
+    private static final double BONUSPORANO = 3000.0;
    
     
      public Gerente(String nome, int mesContratacao, int anoContratacao) {
@@ -27,10 +27,10 @@ public class Gerente extends Funcionario {
 
         int anosDeServico = ano - dataContratacao.getAno();
         
-        double salario = salarioBase;
+        double salario = SALARIOBASE;
         
         if (anosDeServico > 0) {
-        salario += (anosDeServico * bonusPorAno);
+        salario += (anosDeServico * BONUSPORANO);
     }
 
         return salario;
@@ -49,10 +49,10 @@ public class Gerente extends Funcionario {
 
     @Override
     public void exibirInformacoesDoFuncionario(int mes, int ano) {
-        System.out.println("Cargo: Gerente");
+        System.out.println("\nCargo: Gerente");
         System.out.println("Nome: " + nome);
         System.out.println("Data de Contratação: " + dataContratacao.getMes() + "/" + dataContratacao.getAno());
-        System.out.println("Salário em " + mes + "/" + ano + ": R$" + getSalario(mes, ano));
+        System.out.println("Salário em " + mes + "/" + ano + ": R$ " + getSalario(mes, ano));
     }
 
 
